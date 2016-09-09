@@ -1,0 +1,6 @@
+for (var i = 0; i<10; i++) {
+functions[i] = function x(){ console.log(`function for ${i}`);
+}
+}
+x(){ console.log(`function for ${i}`);
+}

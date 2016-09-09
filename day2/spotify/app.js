@@ -13,11 +13,7 @@ function linkName(item, element_search ,class_name){
 function setItemLi(item, element_search, class_name){
   var html = "<li>" ;
   html += linkName(item, element_search, class_name) + "<br>";
-  console.log(item.images);
-  if (typeof(item.images) != 'undefined')  {
-    html += getImage(item);
-  }
-
+  html += typeof(item.images) != 'undefined')  ? getImage(item) : ""
   html += "</li>";
 
   return html;
@@ -82,7 +78,6 @@ function getAlbum(e){
   //search_url += getArtistInput();
   search_url += $(e.currentTarget).attr("artist-id") + "/albums";
 
-
   $.ajax({
     type: "GET",
     url: search_url,
@@ -128,10 +123,4 @@ $(document).ready(function(){
     //getAlbum(event);
     //console.log(e.currentTarget.attr(id));
   });
-
-
-
-
-
-
 });
